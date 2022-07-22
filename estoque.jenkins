@@ -1,2 +1,13 @@
 echo "Ola mundo"
-mvn clean install
+pipeline {
+  agent any
+  tools {
+    maven 'Maven 3.3.9'
+    jdk 'jdk11'
+  }
+  stages {
+    step {
+      sh 'mvn -Dmaven.test.failure.ignore=true install'
+    }
+  }
+}
