@@ -1,10 +1,10 @@
 echo "Ola mundo"
 pipeline {
- agent any
+ agent jenkins
   stages {
     stage('Build') {
       steps {
-         sh 'mvnw -Dmaven.test.failure.ignore=true install'
+         sh './mvnw -Dmaven.test.failure.ignore=true install'
       }
     }
   }
