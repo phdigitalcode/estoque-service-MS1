@@ -6,8 +6,10 @@ pipeline {
     jdk 'jdk11'
   }
   stages {
-    step {
-      sh 'mvn -Dmaven.test.failure.ignore=true install'
+    stage('Build') {
+      steps {
+        sh 'mvn -Dmaven.test.failure.ignore=true install'
+      }
     }
   }
 }
