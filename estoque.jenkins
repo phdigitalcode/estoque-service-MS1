@@ -1,1 +1,2 @@
 echo "Ola mundo"
+mvn clean install
