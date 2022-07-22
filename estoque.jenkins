@@ -1,10 +1,10 @@
 echo "Ola mundo"
 pipeline {
- agent none
+ agent any
   stages {
     stage('Build') {
       steps {
-         sh 'sudo ./mvnw -Dmaven.test.failure.ignore=true install'
+         sh 'sudo sh ./mvnw -Dmaven.test.failure.ignore=true install'
       }
     }
   }
